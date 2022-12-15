@@ -4,16 +4,8 @@ description: How to run Mastodon with the included docker-compose.yml
 menu:
   docs:
     parent: admin
-    weight: 9999
+    weight: 19
 ---
-
-We do not recommend admins use Docker Compose unless they have significant prior
-experience running docker in production. In our experience helping hundreds of
-admins troubleshoot and set up their server, there are many footguns and new
-areas of complexity compared to the standard systemd workflow that the Mastodon
-contributors are used to supporting.
-
-If that's something you're comfortable with, lets get started.
 
 ## Setting up
 
