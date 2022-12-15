@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: hugo --minify
     
-    - name: Upload GitHub Pages artifact
+    - name: Prepare deploy
       uses: actions/upload-pages-artifact@v1.0.6
       with:
         # Artifact name
@@ -30,8 +30,8 @@ jobs:
         # Duration after which artifact will expire in days.
         retention-days: 1
     
-    - name: Deploy GitHub Pages site
+    - name: Deploy
       uses: actions/deploy-pages@v1.2.3
       with:
-        # Should this action only emit build telemetry instead of deploying the build artifact?
         emit_telemetry: false
+        token: ${{ secrets.GH_TOKEN }}
