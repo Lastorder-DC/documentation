@@ -19,13 +19,19 @@ jobs:
 
     - name: Build
       run: hugo --minify
-
-    - name: Deploy
-      uses: easingthemes/ssh-deploy@v2.0.7
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        ARGS: "-rltgoDzvO"
-        SOURCE: ./public/
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
+    
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v1.0.6
+      with:
+        # Artifact name
+        name: 'mastodon-documentation'
+        # Path of the directory containing the static assets.
+        path: public/
+        # Duration after which artifact will expire in days.
+        retention-days: 1
+    
+    - name: Deploy GitHub Pages site
+      uses: actions/deploy-pages@v1.2.3
+      with:
+        # Should this action only emit build telemetry instead of deploying the build artifact?
+        emit_telemetry: false
