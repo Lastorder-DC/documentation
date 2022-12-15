@@ -1,7 +1,7 @@
-baseURL = "https://docs.joinmastodon.org/"
+baseURL = "https://docs.yumeka.icu/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Mastodon documentation"
+title = "Unofficial Mastodon documentation"
 pygmentsCodeFences = true
 pygmentsStyle = "dracula"
 metaDataFormat = "yaml"
