@@ -1,5 +1,5 @@
 ---
-title: Using Docker
+title: Install with docker
 description: How to run Mastodon with the included docker-compose.yml
 menu:
   docs:
